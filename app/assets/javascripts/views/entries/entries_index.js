@@ -2,13 +2,16 @@ RafflerJs.Views.EntriesIndex = Backbone.View.extend({
   el: '#container',
   template: JST['entries/index'],
   events: {
-     'keypress #new_entry': 'createEntry'
+     'keypress #new_entry': 'createEntry',
+     'click #filter':'filter'
   },
 
   initialize: function(){
       this.listenTo(this.collection, 'reset', this.render);
-      this.listenTo(this.collection, 'add', this.render);
+      this.listenTo(this.collection, 'add', this.appendEntry);
       this.listenTo(this.collection, 'remove', this.render);
+
+      this.render();
   },
 
 
@@ -30,12 +33,27 @@ RafflerJs.Views.EntriesIndex = Backbone.View.extend({
           return;
       }else {
           this.collection.create({name: this.$('#new_entry').val()});
+          this.$('#new_entry').val('');
       }
   },
 
-  deleteEntry: function(event){
-    console.log(event);
-  }
+  filter: function(event){
 
+     if(event.currentTarget.innerHTML == "Show"){
+         event.currentTarget.innerHTML = "Hide"
+     }
+
+     stars =  $("#star.input-group-addon");
+     for(var i = 0; i <  stars.length; i++) {
+         var cur = $(".input-group")[i];
+
+         if(stars[i].innerHTML == '★' && cur.style.display =="") {
+             cur.style.display = "none";
+         }else{
+             cur.style.display = "";
+         }
+     }
+
+  }
 
 });

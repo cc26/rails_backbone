@@ -4,7 +4,8 @@ RafflerJs.Views.EntryView = Backbone.View.extend({
     events:{
        'keypress #edited_name': 'updateEntry',
        'click #check_delete':'deleteEntry',
-       'dblclick #label':'editEntry'
+       'dblclick #label':'editEntry',
+       'click #star':'changeStar'
     },
 
     initialize: function(){
@@ -42,5 +43,15 @@ RafflerJs.Views.EntryView = Backbone.View.extend({
         console.log(this.model.get('name'));
         var router = new RafflerJs.Routers.Entries();
         this.model.destroy();
+    },
+
+    changeStar:function(ev){
+        if(ev.currentTarget.innerHTML=='☆'){
+            ev.currentTarget.innerHTML='★';
+        }
+        else if(ev.currentTarget.innerHTML='★') {
+            ev.currentTarget.innerHTML = '☆';
+        }
+
     }
 });

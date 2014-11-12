@@ -1,10 +1,10 @@
 RafflerJs.Views.EntryView = Backbone.View.extend({
-    tagName: 'li',
+    tagName: 'div',
     template: JST['entries/item'],
     events:{
-       'click #delete_button': 'deleteEntry',
-       'click #edit_button': 'editEntry',
-       'keypress #edited_name': 'updateEntry'
+       'keypress #edited_name': 'updateEntry',
+       'click #check_delete':'deleteEntry',
+       'dblclick #label':'editEntry'
     },
 
     initialize: function(){
@@ -18,11 +18,16 @@ RafflerJs.Views.EntryView = Backbone.View.extend({
     },
 
     editEntry:function(ele){
-        this.$("#edited_name").show();
+        if(this.$("#edited_name")[0].style.display == "none"
+            || this.$("#edited_name")[0].style.display == ""){
+            this.$("#edited_name").show();
+        }else{
+            this.$("#edited_name").hide();
+        }
     },
 
     updateEntry:function(event){
-        console.log("am i here?");
+
         if ( event.keyCode != 13 || !this.$('#edited_name').val().trim() ) {
             return;
         }else {

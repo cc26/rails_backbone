@@ -1,3 +1,15 @@
-<%= entry.get('name') %> <button id= "delete_button">Delete Me!!!</button> <button id= "edit_button">Edit</button>
 
-<input id="edited_name" placeholder=<%=entry.get('name')%>  hidden>
+<div class = "row">
+    <div class = "col-lg-6">
+      <div class="input-group">
+          <div class="form-control" id= "label"><%= entry.get('name') %></div>
+            <span class="input-group-addon">
+            <input type="checkbox" id = "check_delete">
+          </span>
+      </div>
+      <input id="edited_name" placeholder=<%=entry.get('name')%> autofocus hidden>
+    </div>
+</div>
+
+
+

@@ -1,11 +1,16 @@
-<h1>List</h1>
+<div>
+<h1>How many task<%= entries.length == 0?'':'s'%>? <%= entries.length %></h1>
 
-<input id="new_entry" placeholder="Enter new name" autofocus>
+<div id= "entries"> </div>
 
-<%= entries.length %>
+<div id = "textbox">
 
 
-<ul id= "entries"></ul>
+<textarea id="new_entry" placeholder="Enter new task" autofocus></textarea>
 
+
+</div>
+
+</div>
 
 

@@ -131,6 +131,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v3.2.17, RVM: ruby-1.9.3-p550) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v3.0.3, RVM: ruby-1.9.3-p550) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="backbone-on-rails (v1.1.2.0, RVM: ruby-1.9.3-p550) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.3.0.1, RVM: ruby-1.9.3-p550) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, RVM: ruby-1.9.3-p550) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.7.4, RVM: ruby-1.9.3-p550) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.2.2, RVM: ruby-1.9.3-p550) [gem]" level="application" />

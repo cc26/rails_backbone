@@ -1,3 +1,36 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+body{
+  background-color:#b0e0e6;
+  margin-left: 30%;
+  margin-right: auto;
+}
+
+#container{
+  margin-left: 0px;
+  margin-right: 40%;
+}
+.todo_entry{
+  margin-left: 30%;
+  margin-right: 40%;
+}
+
+#new_entry {
+  width: 70%;
+  height: 40%;
+}
+
+#textbox{
+  margin-top: 1%;
+
+}
+
+
+#edited_name{
+  width:30%;
+  height:100%;
+}
+

@@ -25,7 +25,10 @@ RafflerJs.Views.EntriesIndex = Backbone.View.extend({
 
   appendEntry: function(entry){
     var entryView = new RafflerJs.Views.EntryView({model:entry});
-    this.$('#entries').append(entryView.render().el);
+    var rendered = entryView.render();
+
+    $(rendered.el).appendTo(this.$('#entries')).hide().fadeIn().slideDown();
+
   },
 
   createEntry: function(event){
@@ -34,19 +37,26 @@ RafflerJs.Views.EntriesIndex = Backbone.View.extend({
       }else {
           this.collection.create({name: this.$('#new_entry').val()});
           this.$('#new_entry').val('');
+          return false;
       }
   },
 
   filter: function(event){
 
-     if(event.currentTarget.innerHTML == "Show"){
-         event.currentTarget.innerHTML = "Hide"
+     if(event.currentTarget.innerHTML == "Hide"){
+         event.currentTarget.innerHTML = "Show"
+     }else{
+         event.currentTarget.innerHTML = "Hide";
      }
 
-     stars =  $("#star.input-group-addon");
-     for(var i = 0; i <  stars.length; i++) {
+     var stars =  $("#star.input-group-addon");
+//     $.each(stars, function (index, data) {
+//          $(this).html('2');
+//     });
+//
+//
+      for(var i = 0; i <  stars.length; i++) {
          var cur = $(".input-group")[i];
-
          if(stars[i].innerHTML == '★' && cur.style.display =="") {
              cur.style.display = "none";
          }else{
